@@ -26,21 +26,20 @@ module.exports = (app) => {
         });
 
         app.delete('/api/notes/:id', (req, res, ) => {
-                    fs.readFile("./db/db.json", "utf8", (err, data) => {
-                        if (err) throw err;
-                        console.log('delete', data)
-                        console.log(req.params.id)
-                        // data filter data where data.id != req.params.id
-                        //then take new array from filter and do an fswrtiefile for the filtered array
-                        fs.writeFile("./db/db.json", jsonNotes, function (err) {
-                            if (err) {
-                                return console.log(err);
-                            }
-                        })
-
-                    })
-
+            fs.readFile("./db/db.json", "utf8", (err, data) => {
+                console.log(req.params.id)
+                var jsonNotes = JSON.parse(data)
+                jsonNotes = jsonNotes.filter(note => {
+                    note.id !== req.params.id
                 })
+                res.json(jsonNotes)
+                fs.writeFile("./db/db.json", JSON.stringify(jsonNotes), function (err) {
+                    if (err) {
+                        return console.log(err);
+                    }
+                })
+            })
+        })
                 
 
 
