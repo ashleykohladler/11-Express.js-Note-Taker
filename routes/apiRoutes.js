@@ -4,35 +4,40 @@ const uuid = require('uuid');
 
 
 module.exports = (app) => {
-    app.get('/api/notes', (req, res) => {
-        fs.readFile("./db/db.json", "utf8", (err, data) => {
-            if (err) throw err;
-            console.log(data)
-            return res.json(JSON.parse(data)) //turns it into a JS object aka array
-        })
-    });
-    app.post('/api/notes', (req, res) => {
-        let newNote = req.body
-        fs.readFile("./db/db.json", "utf8", (err, data) => {
-            if (err) throw err;
-            console.log(newNote)
-            let notes = JSON.parse(data) //now array
-            newNote.id = uuid.v4() //object, how to add properties to objects newNote["id"]
-            notes.push(newNote) //Array -> object
-            fs.writeFile("./db/db.json", JSON.stringify(notes), "utf8", (err, data) => {
-                return res.json(newNote)
+        app.get('/api/notes', (req, res) => {
+            fs.readFile("./db/db.json", "utf8", (err, data) => {
+                if (err) throw err;
+                console.log(data)
+                return res.json(JSON.parse(data)) //turns it into a JS object aka array
             })
-        })
-    });
+        });
+        app.post('/api/notes', (req, res) => {
+            let newNote = req.body
+            fs.readFile("./db/db.json", "utf8", (err, data) => {
+                if (err) throw err;
+                console.log(newNote)
+                let notes = JSON.parse(data) //now array
+                newNote.id = uuid.v4() //object, how to add properties to objects newNote["id"]
+                notes.push(newNote) //Array -> object
+                fs.writeFile("./db/db.json", JSON.stringify(notes), "utf8", (err, data) => {
+                    return res.json(newNote)
+                })
+            })
+        });
 
-};
+        app.delete('/api/notes/:id', (req, res, ) => {
+                    fs.readFile("./db/db.json", "utf8", (err, data) => {
+                        console.log('delete', data)
+                        console.log(req.params.id)
+                        // data filter data where data.id != req.params.id
+                        //then take new array from filter and do an fswrtiefile for the filtered array
+                        fs.writeFile("./db/db.json", jsonNotes, function (err) {
+                            if (err) {
+                                return console.log(err);
+                            }
+                        })
 
-    // app.delete('/api/notes: id', (req, res,) => {
-    //    fs.readFile("./db/db.json", "utf8", (err, data) => {
-    //     var id = req.params.id;
-    //     notesData.length = 0;
-    //     res.json({
-    //         ok: true
-    //     })
-    //     });
-    // });
+                    })
+
+                })
+            };
