@@ -28,12 +28,11 @@ module.exports = (app) => {
 };
 
     // app.delete('/api/notes: id', (req, res,) => {
-    //     fs.readFile("./db/db.json", "utf8", (err, data) => {
-
-    //     }
+    //    fs.readFile("./db/db.json", "utf8", (err, data) => {
     //     var id = req.params.id;
     //     notesData.length = 0;
     //     res.json({
     //         ok: true
+    //     })
     //     });
     // });
