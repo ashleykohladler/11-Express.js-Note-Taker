@@ -27,6 +27,7 @@ module.exports = (app) => {
 
         app.delete('/api/notes/:id', (req, res, ) => {
                     fs.readFile("./db/db.json", "utf8", (err, data) => {
+                        if (err) throw err;
                         console.log('delete', data)
                         console.log(req.params.id)
                         // data filter data where data.id != req.params.id
@@ -40,4 +41,8 @@ module.exports = (app) => {
                     })
 
                 })
+                
+
+
+
             };
