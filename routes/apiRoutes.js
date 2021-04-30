@@ -29,11 +29,14 @@ module.exports = (app) => {
             fs.readFile("./db/db.json", "utf8", (err, data) => {
                 console.log(req.params.id)
                 var jsonNotes = JSON.parse(data)
-                jsonNotes = jsonNotes.filter(note => {
-                    note.id !== req.params.id
+                var updatedNotes = jsonNotes.filter(note => {
+                    return note.id !== req.params.id
                 })
-                res.json(jsonNotes)
-                fs.writeFile("./db/db.json", JSON.stringify(jsonNotes), function (err) {
+                console.log(updatedNotes)
+                console.log(jsonNotes)
+
+                res.json(updatedNotes)
+                fs.writeFile("./db/db.json", JSON.stringify(updatedNotes), function (err) {
                     if (err) {
                         return console.log(err);
                     }
