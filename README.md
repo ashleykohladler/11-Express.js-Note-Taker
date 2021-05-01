@@ -7,19 +7,18 @@
   3. [Usage](#Usage)
   4. [License](#License)
   5. [Contributing](#Contributing)
-  6. [Tests](#Tests)
-  7. [Questions](#Questions)
-  8. [Demo](#Demo)
+  6. [Questions](#Questions)
+  7. [Demo](#Demo)
 
 
   # Description 
-  This Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. 
+  
 
   # Installation
   The program is run with the command "node index.js"
 
   # Usage
-  When generator starts answer questions prompts to customize team.HTML
+  
 
   # Contributing
   Contributions are accepted
@@ -28,28 +27,21 @@
   # License
   ![badge](https://img.shields.io/badge/license-MIT-brightgreen)
   
-  # Tests
-  - Jest Test
-
-  ![screenshot](./Images/PassedTests.png)
-
-  
 
   # Questions:
   ## GitHub User name 
   ashleykohladler
   ### Link to GitHub:
-  ### To access the website go to https://github.com/ashleykohladler/Team-Profile-Generator
+https://github.com/ashleykohladler/11-Express.js-Note-Taker
+
+  ### Link to Heroku:
+  https://cryptic-mesa-91189.herokuapp.com/
 
   ### Email address 
   akohl22@gmail.com
 
   # Demo
-  ## Using application from the command line and generating HTML
-  ![Demo of README](Images/HW-Team-Profile-Generator.gif)
-
-  ## Demo of all 4 tests passing
-  ![Demo of README](Images/HW-JEST-TEST.gif)
+  ![screenshot](public/assets/images/note.png)
 
   # Badges
 
