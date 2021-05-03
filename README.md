@@ -12,12 +12,16 @@
 
 
   # Description 
-  
+  I created an application that can be used to write, save and delete notes.
 
   # Installation
   The program is run with the command "node index.js"
 
   # Usage
+  JSON
+  Express.js
+  Node.js
+  NPM i
   
 
   # Contributing
